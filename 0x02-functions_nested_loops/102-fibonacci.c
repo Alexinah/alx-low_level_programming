@@ -8,20 +8,21 @@
  */
 int main(void)
 {
-	int a;
-	long int n1, n2, fib;
+	int cot;
+	unsigned int fib1 = 0, fib2 = 1, sum;
 
-	n1 = 1;
-	n2 = 2;
-
-	printf("%1d, %1d", n1, n2);
-	for (a = 0; a < 48; a++)
+	for (cot = 0; cot < 50; cot++)
 	{
-		fib = n1 + n2;
-		printf(", %1d", fn);
-		n1 = n2;
-		n2 = fib;
+		sum = fib1 + fib2;
+		printf("%1u", sum);
+
+		fib1 = fib2;
+		fib2 = sum;
+
+		if (cot == 49)
+			printf("\n");
+		else
+			printf(", ");
 	}
-	printf("\n");
 	return (0);
 }
