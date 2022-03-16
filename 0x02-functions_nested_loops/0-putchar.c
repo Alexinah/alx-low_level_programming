@@ -1,21 +1,20 @@
-#include "main.h"
+#include <stdio.h>
 
 /**
- * main - Prints "_putchar"followed by new line
+ * main - prints putchar
  *
- * Return: Always 0
+ * Return: 0 (success)
  */
 int main(void)
 {
-	_putchar('_');
-	_putchar('p');
-	_putchar('u');
-	_putchar('t');
-	_putchar('c');
-	_putchar('h');
-	_putchar('a');
-	_putchar('r');
-	_putchar('\n');
+	char text[9] = "_Putchar";
+	int i = 0;
+
+	for (i = 0; i < 8; i++)
+	{
+		putchar(text[i]);
+	}
+	putchar(10);
 
 	return (0);
 }
