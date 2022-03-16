@@ -15,24 +15,29 @@ void print_times_table(int n)
 	{
 		for (a = 0; a <= n; a++)
 		{
-			_putchar(48);
+			_putchar('0');
+			
+			
 			for (b = 1; b <= n; b++)
 			{
+		 		_putchar(',');
+				_putchar(',');
+
 				p = a * b;
-				_putchar(44);
-				_putchar(32);
-				if (p <= 9)
+				if (p <= 99)
+					_putchar(' ');
+				if (p >= 9)
+					_putchar(' ');
+				if (p >= 100)
 				{
-					_putchar(32);
-					_putchar(32);
-					_putchar(p + 48);
+					_putchar((p / 100) + '0');
+					_putchar(((p / 10)) % 10 + '0');
 				}
-				else
+				else if (p <= 99 && p >= 10)
 				{
-					_putchar(((p / 100) % 10) + 48);
-					_putchar(((p / 10) % 10) + 48);
-					_putchar((p % 10) + 48);
+					_putchar((p / 10) + '0');
 				}
+				_putchar((p % 10) + '0');
 			}
 			_putchar('\n');
 		}
