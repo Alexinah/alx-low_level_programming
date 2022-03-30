@@ -1,51 +1,49 @@
 #include "main.h"
 
 /**
- * is_palindrome -checks is a string is empty
- * @s: string in memory
- * Return: 1 if string is a palindrome and 0 if not
- */
-int is_palindrome(char *s)
-{
-	int i, size, add;
-
-	i = 0;
-	add = 0;
-
-	size = _strlen_recursion(r);
-
-	add = (size % 2 != 0) ? 2 : 1;
-	return (evaluate(r, i, size - 1, add));
-}
-/**
- * evaluate - compare
- * @i: i
- * @size: size
- * @s: string
- * @add: addition depending if n is odd or even
- * Return: value
- */
-int evaluate(char *s, int i, int size, int add)
-{
-	if (i + add == size && s[i] == s[size])
-	{
-		return (1);
-	}
-	else if (s[i] == s[size])
-	{
-		return (evaluate(s, i + 1, size - 1, add));
-	}
-	return (0);
-}
-/**
- * _strlen_recursion - length of a string
+ * find_strlen - length of string
  * @s: string
  * Return: length
  */
-int _strlen_recursion(char *s)
+int find_strlen(char *s)
 {
-	if (!*s)
-		return (0);
-	else
-		return  (1 + _strlen_recursion(s + 1));
+	int len = 0;
+
+	if (*(s + len))
+	{
+		len++;
+		len += find_strlen(s + len);
+	}
+	return (len);
 }
+/**
+ * check_palindrome - checks if a string is palindrome
+ * @s: string
+ * @len: length
+ * @index: index
+ * Return: 1 if string is palindrome, 0 if not
+ */
+int check_palindrome(char *s, int len, int index)
+{
+	if (s[index] == s[len / 2])
+		return (1);
+	if (s[index] == s[len - index - 1])
+		return (check_palindrome(s, len, index + 1));
+	return (0);
+}
+
+/**
+ * is_palindrome - checks if a string is empty
+ * @r: string
+ * Return: 1 or 0
+ */
+int is_palindrome(char *r)
+{
+	int index = 0;
+	int len = find_strlen(s);
+
+	if (!(*s))
+		return (1);
+	return (check_palindrome(s, len, index));
+}
+

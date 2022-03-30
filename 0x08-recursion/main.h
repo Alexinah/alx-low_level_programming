@@ -10,4 +10,5 @@ int is_prime_number(int n);
 int _putchar(char c);
 int _evaluate(int i, int n);
 int evaluate_num(int num, int iterator);
-int evaluate(char *s, int i, int size, int add);
+int check_palindrome(char *s, int len, int index);
+int find_strlen(char *s);
