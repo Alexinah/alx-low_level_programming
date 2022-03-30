@@ -12,3 +12,4 @@ int _evaluate(int i, int n);
 int evaluate_num(int num, int iterator);
 int check_palindrome(char *s, int len, int index);
 int find_strlen(char *s);
+int wildcmp(char *s1, char *s2);
