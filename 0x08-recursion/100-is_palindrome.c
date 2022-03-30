@@ -34,10 +34,10 @@ int check_palindrome(char *s, int len, int index)
 
 /**
  * is_palindrome - checks if a string is empty
- * @r: string
+ * @s: string
  * Return: 1 or 0
  */
-int is_palindrome(char *r)
+int is_palindrome(char *s)
 {
 	int index = 0;
 	int len = find_strlen(s);
