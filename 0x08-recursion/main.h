@@ -10,4 +10,4 @@ int is_prime_number(int n);
 int _putchar(char c);
 int _evaluate(int i, int n);
 int evaluate_num(int num, int iterator);
-
+int evaluate(char *s, int i, int size, int add);
