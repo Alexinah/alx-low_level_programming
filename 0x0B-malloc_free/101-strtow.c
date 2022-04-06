@@ -8,7 +8,7 @@
  *
  * Return: void
  */
-void ch_free_grid(char**grid, unsigned int height)
+void ch_free_grid(char **grid, unsigned int height)
 {
 	if (grid != NULL && height != 0)
 	{
@@ -40,7 +40,7 @@ char **strtow(char *str)
 		free(aout);
 		return (NULL);
 	}
-	for (c = a1 = 0; i < height; i++)
+	for (i = a1 = 0; i < height; i++)
 	{
 		for (c = a1; str[c] != '\0'; c++)
 		{
