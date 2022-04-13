@@ -41,7 +41,7 @@ int op_mul(int a, int b)
  * op_div - return the division of a and b
  * @a: int one
  * @b: int two
- * Return : The division
+ * Return: division
  */
 int op_div(int a, int b)
 {
