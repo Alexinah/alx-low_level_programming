@@ -1,39 +1,26 @@
-#include "3-calc.h"
+#ifndef CALCULATOR_H_
+#define CALCULATOR_H_
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 /**
- * main - Entry point
- * @argc: no of arguments
- * @argv: String arguments
- * Return: 0
+ * struct op - struct
+ * @op: Pointer
+ * @f: (int, int)
  */
-int main(int argc, char *argv[])
+typedef struct op
 {
-	int i, j;
-	int (*d)(int, int);
+	char *op;
+	int (*f)(int a, int b);
+} op_t;
 
-	if (argc != 4)
-	{
-		printf("Error\n");
-		exit(98);
-	}
-	if (argv[2][1] != '\0')
-	{
-		printf("Error\n");
-		exit(99);
-	}
-	d = get_op_func(argv[2]);
+int op_add(int a, int b);
+int op_sub(int a, int b);
+int op_mul(int a, int b);
+int op_div(int a, int b);
+int op_mod(int a, int b);
+int (*get_op_func(char *s))(int, int);
 
-	if (d == NULL)
-	{
-		printf("Error\n");
-		exit(99);
-	}
-
-	i = atoi(argv[1]);
-	j = atoi(argv[3]);
-
-	printf("%d\n", d(i, j));
-
-	return (0);
-}
-
+#endif
