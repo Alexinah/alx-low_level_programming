@@ -5,9 +5,9 @@ size_t looped_listint_len(const listint_t *head);
 size_t print_listint_safe(const listint_t *head);
 
 /**
- * looped_listint_len - counts the number of nodes in a looped linked list
- * @head: A pointer to the head of the list to check
- * Return: 0- if list is not looped, otherwise number of nodes in list
+ * looped_listint_len - counts the no of unique nodes in a looped listint_t
+ * @head: A pointer to the head of the list
+ * Return: If the list is not looped 0 or no of unique nodes in the list
  */
 size_t looped_listint_len(const listint_t *head)
 {
@@ -29,21 +29,27 @@ size_t looped_listint_len(const listint_t *head)
 			{
 				nodes++;
 				tortoise = tortoise->next;
+				hare = hare->next;
+			}
+
+			tortoise = tortoise->next;
+			while (tortoise != hare)
+			{
+				nodes++;
+				tortoise = tortoise->next;
 			}
 			return (nodes);
 		}
-
-		tortoise =  tortoise->next;
+		tortoise = tortoise->next;
 		hare = (hare->next)->next;
 	}
 	return (0);
 }
 
 /**
- * print_listint_safe - prints a list safely
- * @head: A pointer to the head of the list
- *
- * Return: The number of nodes in the list
+ *print_listint_safe - prints a listint_t list safely
+ * @head: A pointer to the head of the linked list
+ * Return: Number of nodes
  */
 size_t print_listint_safe(const listint_t *head)
 {
@@ -57,7 +63,6 @@ size_t print_listint_safe(const listint_t *head)
 		{
 			printf("[%p] %d\n", (void *)head, head->n);
 			head = head->next;
-
 		}
 	}
 	else
@@ -67,6 +72,7 @@ size_t print_listint_safe(const listint_t *head)
 			printf("[%p] %d\n", (void *)head, head->n);
 			head = head->next;
 		}
+
 		printf("-> [%p] %d\n", (void *)head, head->n);
 	}
 	return (nodes);
