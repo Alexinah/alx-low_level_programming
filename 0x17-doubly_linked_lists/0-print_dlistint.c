@@ -2,7 +2,7 @@
 
 /**
  * print_dlistint - Prints all elements of a list
- *@h: The head of the dlistint_t list.
+ * @h: The head of the dlistint_t list.
  *
  * Return: Number of nodes in the list
  */
